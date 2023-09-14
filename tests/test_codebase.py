@@ -4,6 +4,12 @@ import ast
 import glob
 
 
+
+# Set the working diretory to the repo root
+REPO_ROOT = subprocess.check_output(['git', 'rev-parse', '--show-toplevel']).strip().decode('utf-8')
+os.chdir(REPO_ROOT)
+
+
 ALLOWED_FUNCTIONS_IN_CLASS = {
     "CompetativeRedBlueDoorEnvV3": ["ctce_step", "dtde_step", "_handle_steps"],
 }
